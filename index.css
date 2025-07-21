@@ -1,0 +1,588 @@
+/* CSS Variables for Theming */
+:root {
+    --primary-color: #00ff00;
+    --secondary-color: #31b831;
+    --text-color: #e0e0e0;
+    --background-color: #0a0a0a;
+    --card-background: rgba(20, 20, 20, 0.8);
+    --accent-color: #ffffff;
+    --border-color: #333;
+    --shadow-color: rgba(0, 255, 110, 0.5);
+    --muted-text-color: #cccccc;
+    --highlight-color: #444;
+    --terminal-green: #00ff00;
+}
+
+/* Basic Styling */
+body {
+    font-family: 'Fira Code', monospace;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Canvas Styling */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Content Styling */
+main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Section Styling */
+section {
+    min-height: 100vh;
+    padding: 10vh 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Custom Styles for Coding Theme */
+h1,
+h2,
+h3 {
+    font-family: 'Fira Code', monospace;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+p,
+li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 1rem;
+    color: var(--muted-text-color);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li::before {
+    content: '> ';
+    color: var(--primary-color);
+    margin-right: 0.5em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--primary-color);
+}
+
+/* Skill Tag Styling */
+.skill-tag {
+    display: inline-block;
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
+    padding: 0.3em 0.8em;
+    margin: 0.3em;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Fira Code', monospace;
+    border: 1px solid var(--border-color);
+}
+
+/* Roadmap Timeline Styling */
+.roadmap-timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 50px;
+}
+
+.timeline-track {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 4px;
+    z-index: 1;
+}
+
+.timeline-line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 255, 204, 0.2), var(--primary-color), rgba(0, 255, 204, 0.2));
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    left: -38px;
+    top: 20px;
+    box-shadow: 0 0 10px var(--primary-color);
+    z-index: 1;
+}
+
+.timeline-year {
+    position: absolute;
+    font-family: 'Fira Code', monospace;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    left: -90px;
+    top: 16px;
+    text-shadow: 0 0 5px var(--shadow-color);
+    z-index: 1;
+}
+
+.experience-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Experience Card Styling */
+.experience-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: left;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.experience-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.experience-card .company {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.experience-card .dates {
+    font-style: italic;
+    color: var(--muted-text-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.experience-card .tech-stack span {
+    display: inline-block;
+    background-color: var(--border-color);
+    color: var(--muted-text-color);
+    padding: 0.2em 0.6em;
+    margin: 0.2em;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Contact section styling */
+.contact-terminal {
+    max-width: 900px;
+    margin-bottom: 3rem;
+}
+
+.terminal-response {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    border-left: 2px solid var(--primary-color);
+}
+
+.ascii-art {
+    font-family: monospace;
+    line-height: 1.2;
+    color: var(--primary-color);
+    margin: 0;
+    white-space: pre;
+    font-size: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .ascii-art {
+        font-size: 0.5rem;
+    }
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.contact-item {
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.contact-item::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.contact-item:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+.contact-item a {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 255, 204, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.contact-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.contact-info {
+    flex-grow: 1;
+}
+
+.contact-label {
+    font-size: 0.8rem;
+    color: var(--muted-text-color);
+    margin-bottom: 0.25rem;
+}
+
+.contact-value {
+    font-family: 'Fira Code', monospace;
+    color: var(--accent-color);
+    word-break: break-all;
+}
+
+.download-resume-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(0, 255, 204, 0.1);
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+}
+
+.download-resume-btn:hover {
+    background-color: rgba(0, 255, 204, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.download-resume-btn i {
+    margin-right: 0.5rem;
+}
+
+/* Enhanced terminal styling */
+.terminal-window {
+    background-color: rgba(16, 16, 16, 0.9);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    border: 1px solid var(--highlight-color);
+}
+
+/* iOS-style blur effect */
+.blur-effect {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(16, 16, 16, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-header {
+    background-color: var(--border-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.terminal-button:nth-child(1) {
+    background-color: #ff5f56;
+}
+
+.terminal-button:nth-child(2) {
+    background-color: #ffbd2e;
+}
+
+.terminal-button:nth-child(3) {
+    background-color: #27c93f;
+}
+
+.terminal-title {
+    color: var(--muted-text-color);
+    font-size: 0.9rem;
+    font-family: 'Fira Code', monospace;
+    margin-left: 1rem;
+}
+
+.terminal-content {
+    padding: 1.5rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.terminal-prompt {
+    color: var(--terminal-green);
+    margin-right: 0.5rem;
+}
+
+.terminal-text {
+    color: var(--accent-color);
+}
+
+.terminal-output {
+    padding: 1rem 0 1rem 1.5rem;
+    margin: 1rem 0;
+    border-left: 2px solid var(--highlight-color);
+}
+
+.terminal-output h1,
+.terminal-output h2 {
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Navigation buttons styling */
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.nav-button {
+    background-color: rgba(0, 255, 204, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 204, 0.2), transparent);
+    transition: left 0.7s;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 255, 204, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button:hover:before {
+    left: 100%;
+}
+
+/* Scroll hint */
+.scroll-hint {
+    margin-top: 2rem;
+    opacity: 0.8;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.workexp {
+    font-size: 2rem !important;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 2%;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .roadmap-timeline {
+        padding-left: 30px;
+    }
+
+    .timeline-track {
+        left: 15px;
+    }
+
+    .timeline-year {
+        left: -20px;
+        top: -15px;
+        font-size: 0.9rem;
+    }
+
+    .timeline-dot {
+        left: -22px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .experience-card {
+        padding: 1.5rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ascii-art {
+        font-size: 0.5rem;
+    }
+}
