@@ -228,7 +228,9 @@ a:hover {
     border-radius: 3px;
     font-size: 0.8rem;
     font-family: 'Fira Code', monospace;
+
 }
+
 
 /* Contact section styling */
 .contact-terminal {
@@ -373,6 +375,103 @@ a:hover {
     margin-right: 0.5rem;
 }
 
+.marks {
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+/* Section and Title Styling */
+.academic-title {
+    font-family: 'Fira Code', monospace !important;
+    color: var(--primary-color) !important;
+    font-size: 1rem !important;
+    margin: 2rem auto 1rem !important;
+    text-align: center !important;
+    text-shadow: 0 0 5px var(--primary-color) !important;
+    max-width: 800px !important;
+}
+
+.academic-container {
+    min-height: 100vh !important;
+    padding: 10vh 5vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    /* background-color: var(--background-color) !important; */
+}
+
+.academic-container:last-child {
+    border-bottom: none !important;
+}
+
+/* Combined Section Styling */
+.academic-container .academic-subsection {
+    /* background-color: var(--card-background) !important; */
+    /* border: 1px solid var(--border-color) !important; */
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important; */
+    /* backdrop-filter: blur(5px) !important; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    margin-bottom: 2rem !important;
+    text-align: left !important; /* Left alignment for better readability */
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+.academic-container .academic-subsection:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7) !important;
+}
+
+.academic-container .academic-subsection:last-child {
+    margin-bottom: 0 !important;
+}
+
+.academic-container .academic-subsection h3 {
+    font-family: 'Fira Code', monospace !important;
+    color: var(--secondary-color) !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 1rem !important;
+    text-shadow: 0 0 5px var(--secondary-color) !important;
+    text-align: left !important;
+}
+
+.academic-container .academic-subsection p {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    color: var(--muted-text-color) !important;
+    margin-bottom: 1rem !important;
+    text-align: left !important;
+}
+
+.academic-container .academic-subsection p strong {
+    color: var(--accent-color) !important;
+    margin-right: 0.5rem !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .academic-title {
+        font-size: 1.5rem !important;
+        margin: 1rem auto !important;
+    }
+    .academic-container {
+        padding: 5vh 2vw !important;
+    }
+    .academic-container .academic-subsection {
+        padding: 1.5rem !important;
+        margin: 0 1rem 2rem !important;
+    }
+    .academic-container .academic-subsection h3 {
+        font-size: 1.2rem !important;
+    }
+    .academic-container .academic-subsection p {
+        font-size: 1rem !important;
+    }
+}
 /* Enhanced terminal styling */
 .terminal-window {
     background-color: rgba(16, 16, 16, 0.9);
