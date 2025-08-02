@@ -660,9 +660,10 @@ a:hover {
 .exp-in-begin-name {
     font-size: 1.7rem;
 }
-    .exp-in-begin-deg{
-        margin-bottom: 1rem;
-    }
+
+.exp-in-begin-deg {
+    margin-bottom: 1rem;
+}
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
@@ -700,8 +701,9 @@ a:hover {
     }
 
     .exp-in-begin-dsc {
-        text-align: start;
+        width: 110%
     }
+
     /* .exp-in-begin-name {
         font-size: 1rem;
     } */
