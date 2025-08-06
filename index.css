@@ -612,6 +612,10 @@ a:hover {
     animation: pulse 2s infinite;
 }
 
+.projects-content{
+    text-align: start;
+    margin-bottom: 1rem;
+}
 @keyframes pulse {
     0% {
         opacity: 0.5;
@@ -665,6 +669,7 @@ a:hover {
     margin-bottom: 1rem;
 }
 
+
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
     .roadmap-timeline {
@@ -707,5 +712,6 @@ a:hover {
     /* .exp-in-begin-name {
         font-size: 1rem;
     } */
+
 
 }
